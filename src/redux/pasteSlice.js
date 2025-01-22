@@ -27,16 +27,6 @@ export const pasteSlice = createSlice({
       const paste = action.payload;
       state.pastes.push(paste);
       localStorage.setItem("pastes", JSON.stringify(state.pastes));
-      toast.success("Paste created successfully!", {
-        position: "top-right",
-        autoClose: 1200,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
     },
     updateToPastes: (state, action) => {
       const paste = action.payload;
@@ -66,7 +56,6 @@ export const pasteSlice = createSlice({
         state.pastes.splice(index, 1);
 
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
-        toast.success("Paste deleted");
       }
     },
   },
